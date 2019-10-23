@@ -18,4 +18,7 @@ const Route = use('Route')
 
 // Route.on('/').render('welcome')
 
-Route.get('/oauth', 'WechatController.oauth');
+Route.group(() => {
+  Route.get('/oauth', 'WechatController.oauth');
+  Route.get('/oauthCallback', 'WechatController.oauthCallback');
+}).prefix('wechat')

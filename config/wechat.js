@@ -10,7 +10,7 @@ module.exports = {
   |--------------------------------------------------------------------------
   |
   */
-  appId: Env.get('APPID', ''),
+  appId: Env.get('APP_ID', ''),
 
   /*
   |--------------------------------------------------------------------------
@@ -23,72 +23,11 @@ module.exports = {
 
   /*
   |--------------------------------------------------------------------------
-  | Clear session when browser closes
+  | APP_SECRET
   |--------------------------------------------------------------------------
   |
-  | If this value is true, the session cookie will be temporary and will be
-  | removed when browser closes.
   |
   */
-  clearWithBrowser: true,
+  appSecret: Env.get('APP_SECRET', ''),
 
-  /*
-  |--------------------------------------------------------------------------
-  | Session age
-  |--------------------------------------------------------------------------
-  |
-  | This value is only used when `clearWithBrowser` is set to false. The
-  | age must be a valid https://npmjs.org/package/ms string or should
-  | be in milliseconds.
-  |
-  | Valid values are:
-  |  '2h', '10d', '5y', '2.5 hrs'
-  |
-  */
-  age: '2h',
-
-  /*
-  |--------------------------------------------------------------------------
-  | Cookie options
-  |--------------------------------------------------------------------------
-  |
-  | Cookie options defines the options to be used for setting up session
-  | cookie
-  |
-  */
-  cookie: {
-    httpOnly: true,
-    sameSite: false,
-    path: '/'
-  },
-
-  /*
-  |--------------------------------------------------------------------------
-  | Sessions location
-  |--------------------------------------------------------------------------
-  |
-  | If driver is set to file, we need to define the relative location from
-  | the temporary path or absolute url to any location.
-  |
-  */
-  file: {
-    location: 'sessions'
-  },
-
-  /*
-  |--------------------------------------------------------------------------
-  | Redis config
-  |--------------------------------------------------------------------------
-  |
-  | The configuration for the redis driver. By default we reference it from
-  | the redis file. But you are free to define an object here too.
-  |
-  */
-  redis: {
-    host: '127.0.0.1',
-    port: 6379,
-    password: null,
-    db: 0,
-    keyPrefix: ''
-  }
 }
